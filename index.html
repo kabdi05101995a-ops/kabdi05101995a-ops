@@ -388,7 +388,7 @@
         const API_KEY = '0f2913b40997f6246619cf6517c8109f';
         const BASE_URL = 'https://api.themoviedb.org/3';
         const IMG_URL = 'https://image.tmdb.org/t/p/original';
-        const EMBED_URL = 'https://vidsrc.icu/embed/movie/';
+        const EMBED_URL = 'https://vidrock.net/movie/';
         const SHOPEE_URL = 'https://s.shopee.co.id/3fxWxPgiCL';
         let playClickCount = 0;
         const GENRE_MAP = { 28: "Action", 12: "Adventure", 16: "Animation", 35: "Comedy", 80: "Crime", 99: "Documentary", 18: "Drama", 10751: "Family", 14: "Fantasy", 36: "History", 27: "Horror", 10402: "Music", 9648: "Mystery", 10749: "Romance", 878: "Science Fiction", 10770: "TV Movie", 53: "Thriller", 10752: "War", 37: "Western" };
@@ -479,10 +479,10 @@
             const player = document.getElementById('player-container');
             player.innerHTML = `<div class="player-container">
                 <h5>${movie.title}</h5>
-                <iframe src="${EMBED_URL + id}" allowfullscreen></iframe>
+                <iframe src="${EMBED_URL + id}?autoplay=true&autonext=true&theme=00ff00&download=true" allowfullscreen></iframe>
                 <div class="movie-info">
-                    <p><strong>Deskripsi:</strong> ${movie.overview || '-'}</p>
-                    <p><strong>Rilis:</strong> ${movie.release_date || '-'}</p>
+                    <p><strong>Description:</strong> ${movie.overview || '-'}</p>
+                    <p><strong>Release:</strong> ${movie.release_date || '-'}</p>
                     <p><strong>Rating:</strong> ${movie.vote_average?.toFixed(1) || 'N/A'}</p>
                     ${movie.genres && movie.genres.some(g => g.name && g.name.toUpperCase() !== 'NA')
                     ? `<p><strong>Genre:</strong> ${movie.genres.map(g => g.name).filter(n => n && n.toUpperCase() !== 'NA').join(', ')}</p>` : ''
